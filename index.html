@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر إلكتروني</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .product { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .cart { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>مرحبا بكم في متجرنا الإلكتروني</h1>
+    <div id="products">
+        <h2>المنتجات</h2>
+        <div class="product">
+            <h3>منتج 1</h3>
+            <p>السعر: 100 د.إ</p>
+            <button onclick="addToCart('منتج 1', 100)">أضف إلى السلة</button>
+        </div>
+        <div class="product">
+            <h3>منتج 2</h3>
+            <p>السعر: 150 د.إ</p>
+            <button onclick="addToCart('منتج 2', 150)">أضف إلى السلة</button>
+        </div>
+    </div>
+    <div class="cart">
+        <h2>سلة التسوق</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price">الإجمالي: 0 د.إ</p>
+        <button onclick="checkout()">إتمام الشراء</button>
+    </div>
+    <script>
+        let cart = [];
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const totalPrice = document.getElementById('total-price');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+              const li = document.createElement('li');
+              li.textContent = `${item.product} - ${item.price} د.إ`;
+              cartItems.appendChild(li);
+              total += item.price;
+            });
+            totalPrice.textContent = `الإجمالي: ${total} د.إ`;
+        }
+
+        function checkout() {
+            alert('شكراً لتسوقك معنا!');
+            cart = [];
+            updateCart();
+        }
+    </script>
+</body>
+</html>
