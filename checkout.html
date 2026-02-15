@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; direction: rtl; }
+        header, footer { background-color: #f8f8f8; padding: 10px; text-align: center; }
+        .container { width: 80%; margin: auto; }
+        h1 { color: #333; }
+        label { display: block; margin: 10px 0 5px; }
+        input, select, button { width: 100%; padding: 10px; margin: 5px 0; }
+        button { background-color: #4CAF50; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>صفحة الدفع</h1>
+    </header>
+    <div class="container">
+        <form>
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="payment-method">طريقة الدفع:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="credit-card">بطاقة ائتمانية</option>
+                <option value="paypal">باي بال</option>
+                <option value="bank-transfer">تحويل بنكي</option>
+                <option value="mada">مدى</option>
+                <option value="stc-pay">stc Pay</option>
+            </select>
+
+            <button type="submit">أكمل الدفع</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2026 كل الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
