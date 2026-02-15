@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account Management</title>
+</head>
+<body>
+    <h1>User Account Management</h1>
+    <form id="account-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Create Account</button>
+    </form>
+    <h2>Existing Accounts</h2>
+    <ul id="account-list">
+        <!-- Dynamically populated list of accounts -->
+    </ul>
+    <script>
+        // JavaScript to manage account creation and display
+        document.getElementById('account-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            // Placeholder for account creation logic
+            alert(`Account created for ${username}`);
+        });
+    </script>
+</body>
+</html>
